@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Change Name</h3>
+    <form method="post" action="/account/change/" name='name'> {% csrf_token %}
+        <h4>Change name: {{user.first_name}} {{user.last_name}}</h4>
+        <table>{{change_name_form.as_table}}</table>
+        <p>{{name_message}}</p>
+        <p><input type="submit" value="Save Changes" name="change_name"/></p>
+    </form>
+
+<h3>Change Email</h3>
+    <form method="post" action="/account/change/" name='email'> {% csrf_token %}
+        <h4>Change email: {{user.email}}</h4>
+        <table>{{change_email_form.as_table}}</table>
+        <p>{{email_message}}</p>
+        <p><input type="submit" value="Save Changes" name="change_email" /></p>
+    </form>
+
+<h3>Change Password</h3>
+    <form method="post" action="/account/change/" name='password'> {% csrf_token %}
+        <h4>Change password</h4>
+        <table>{{change_password_form.as_table}}</table>
+        <p>{{password_message}}</p>
+        <p><input type="submit" value="Save Changes" name="change_password"/></p>
+    </form>
+</body>
+</html>
